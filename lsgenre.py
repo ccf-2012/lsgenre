@@ -15,8 +15,8 @@ def listCategory():
             print(p.genre_ids)
             if p.genre_ids:
                 if ARGS.genre_id in p.genre_ids:
-                    print("Output: " + item)
-                    out_file.write(item+"\n")
+                    print(">>> Output: " + item)
+                    out_file.write(item)
 
 
 def loadArgs():
