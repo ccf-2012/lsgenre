@@ -7,8 +7,14 @@ def listCategory():
     if not os.path.exists(ARGS.input_file):
         print(f"File not found: {ARGS.input_file}")
         return 
-    
-    p = TMDbNameParser(ARGS.tmdb_key, 'zh-CN')
+    ccfcat = None
+    if ARGS.ccfcat:
+        if ARGS.ccfcat in ['TV', 'tv']:
+            ccfcat = 'TV'
+        elif ARGS.ccfcat in ['Movie', 'movie', 'MOVIE']:
+            ccfcat = 'Movie'
+
+    p = TMDbNameParser(ARGS.tmdb_key, 'zh-CN', ccfcat_hard=ccfcat)
     with open(ARGS.input_file) as in_file, open(ARGS.output_file, 'a') as out_file:
         for item in in_file:
             p.parse(item.rstrip(), useTMDb=True)
@@ -25,6 +31,7 @@ def loadArgs():
     parser.add_argument('-i', '--input-file', required=True, help='file of input media list.')
     parser.add_argument('-o', '--output-file', required=True, help='file of output media list.')
     parser.add_argument('-g', '--genre-id', type=int, required=True, help='genre id to be extracted.')
+    parser.add_argument('-c', '--ccfcat', help='specify the category(Movie/TV).')
     parser.add_argument('--tmdb-key', required=True, help='your TMDb key.')
     ARGS = parser.parse_args()
 

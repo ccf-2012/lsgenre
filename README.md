@@ -10,18 +10,20 @@ pip install -r requirements.txt
 ## 使用
 ```
 python lsgenre.py -h
-usage: lsgenre.py [-h] -i INPUT_FILE -o OUTPUT_FILE -g GENRE_ID --tmdb-key TMDB_KEY
+usage: lsgenre.py [-h] -i INPUT_FILE -o OUTPUT_FILE -g GENRE_ID [-c CCFCAT] --tmdb-key TMDB_KEY
 
 list media of specified category.
 
 options:
   -h, --help            show this help message and exit
   -i INPUT_FILE, --input-file INPUT_FILE
-                        file of media list.
+                        file of input media list.
   -o OUTPUT_FILE, --output-file OUTPUT_FILE
-                        file of media list.
+                        file of output media list.
   -g GENRE_ID, --genre-id GENRE_ID
                         genre id to be extracted.
+  -c CCFCAT, --ccfcat CCFCAT
+                        specify the category(Movie/TV).
   --tmdb-key TMDB_KEY   your TMDb key.
 ```
 
@@ -33,5 +35,5 @@ GENRE_LIST_cn = [{'id': 28, 'name': '动作'}, {'id': 12, 'name': '冒险'}, {'i
 
 ## 例子
 ```sh
-python3 lsgenre.py -i movies.txt -o animes.txt -g 16 --tmdb-key your_tmdb_key
+python3 lsgenre.py -i movies.txt -o animes.txt -g 16 -c Movie --tmdb-key your_tmdb_key
 ```
