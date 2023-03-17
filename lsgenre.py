@@ -22,8 +22,8 @@ def listCategory():
 def loadArgs():
     global ARGS
     parser = argparse.ArgumentParser(description='list media of specified category.')
-    parser.add_argument('-i', '--input-file', required=True, help='file of media list.')
-    parser.add_argument('-o', '--output-file', required=True, help='file of media list.')
+    parser.add_argument('-i', '--input-file', required=True, help='file of input media list.')
+    parser.add_argument('-o', '--output-file', required=True, help='file of output media list.')
     parser.add_argument('-g', '--genre-id', required=True, help='genre id to be extracted.')
     parser.add_argument('--tmdb-key', required=True, help='your TMDb key.')
     ARGS = parser.parse_args()

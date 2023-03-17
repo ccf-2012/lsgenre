@@ -1,13 +1,13 @@
 # lsgenre
 
 
-## Install
+## 安装
 ```sh
 git clone https://github.com/ccf-2012/lsgenre.git
 pip install -r requirements.txt
 ```
 
-## Usage
+## 使用
 ```
 python lsgenre.py -h
 usage: lsgenre.py [-h] -i INPUT_FILE -o OUTPUT_FILE -g GENRE_ID --tmdb-key TMDB_KEY
