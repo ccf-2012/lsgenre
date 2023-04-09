@@ -15,7 +15,7 @@ def listCategory():
             ccfcat = 'Movie'
 
     p = TMDbNameParser(ARGS.tmdb_key, 'zh-CN', ccfcat_hard=ccfcat)
-    with open(ARGS.input_file) as in_file, open(ARGS.output_file, 'a') as out_file:
+    with open(ARGS.input_file, encoding='utf-8') as in_file, open(ARGS.output_file, 'a', encoding='utf-8') as out_file:
         for item in in_file:
             p.parse(item.rstrip(), useTMDb=True)
             print(p.genre_ids)
